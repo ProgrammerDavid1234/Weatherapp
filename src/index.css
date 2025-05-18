@@ -1,0 +1,169 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Weather backgrounds */
+.weather-bg-default {
+  @apply bg-gradient-to-br from-blue-500 to-blue-700;
+}
+
+.weather-bg-sunny {
+  @apply bg-gradient-to-br from-yellow-400 to-orange-500;
+  animation: sunny-pulse 20s ease-in-out infinite;
+}
+
+.weather-bg-cloudy {
+  @apply bg-gradient-to-br from-blue-400 to-blue-600;
+  animation: cloudy-move 30s ease-in-out infinite;
+}
+
+.weather-bg-rainy {
+  @apply bg-gradient-to-br from-blue-700 to-blue-900;
+  animation: rain-animation 20s ease-in-out infinite;
+}
+
+.weather-bg-stormy {
+  @apply bg-gradient-to-br from-slate-700 to-slate-900;
+  animation: stormy-flash 15s ease-in-out infinite;
+}
+
+.weather-bg-snowy {
+  @apply bg-gradient-to-br from-blue-100 to-blue-300;
+  animation: snow-drift 25s ease-in-out infinite;
+}
+
+.weather-bg-foggy {
+  @apply bg-gradient-to-br from-gray-300 to-gray-500;
+  animation: fog-flow 30s ease-in-out infinite;
+}
+
+.weather-bg-clear-night {
+  @apply bg-gradient-to-br from-indigo-900 to-purple-900;
+  animation: stars-twinkle 20s ease-in-out infinite;
+}
+
+.weather-bg-cloudy-night {
+  @apply bg-gradient-to-br from-gray-800 to-indigo-900;
+  animation: night-clouds 30s ease-in-out infinite;
+}
+
+/* Glassmorphism for components */
+.glassmorphism {
+  @apply backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg rounded-xl;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes sunny-pulse {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+}
+
+@keyframes cloudy-move {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes rain-animation {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+@keyframes stormy-flash {
+  0%, 15%, 17%, 19%, 100% { filter: brightness(1); }
+  16%, 18%, 20% { filter: brightness(1.5); }
+}
+
+@keyframes snow-drift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 10%; }
+}
+
+@keyframes fog-flow {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 20% 0%; }
+}
+
+@keyframes stars-twinkle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+@keyframes night-clouds {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+}
